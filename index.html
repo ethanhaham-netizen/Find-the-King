@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the King</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>מצא את המלך!</h1>
+            <p>המלך מתחבא בטירה. האם תוכל למצוא אותו?</p>
+        </header>
+        
+        <div id="scene">
+            <img src="background.png" alt="Castle Scene" id="background-img">
+            <img src="king.png" alt="The King" id="king-img">
+        </div>
+
+        <div id="win-message" class="hidden">
+            <h2>כל הכבוד! מצאת את המלך!</h2>
+            <button onclick="location.reload()">שחק שוב</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

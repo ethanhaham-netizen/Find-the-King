@@ -1,0 +1,134 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#game-container {
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 3rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+#scene {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #2c3e50;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: crosshair;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#background-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#king-img {
+    position: absolute;
+    width: 25px;
+    /* Small enough to be hard to find */
+    cursor: pointer;
+    z-index: 10;
+    /* Initial position, will be randomized by JS */
+    top: 50%;
+    left: 50%;
+    transition: transform 0.2s ease;
+}
+
+#king-img:hover {
+    transform: scale(1.1);
+}
+
+#win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 2px solid #f1c40f;
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.hidden {
+    display: none;
+}
+
+#win-message h2 {
+    color: #e67e22;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px);
+}
+
+@keyframes popIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    #king-img {
+        width: 30px;
+    }
+}
